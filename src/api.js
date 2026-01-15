@@ -1,187 +1,30 @@
-// API module for UmbrellaFramework
+// Improved Umbrella - Bug Fix
+// Improved Umbrella
 
-class API {
-    constructor() {
-        this.routes = {};
+/**
+ * Safely divide two numbers with error handling
+ */
+function safeDivide(a, b) {
+    if (b === 0) {
+        throw new Error('Division by zero is not allowed');
+    }
+    return a / b;
+}
+
+/**
+ * Parse configuration string with improved error handling
+ */
+function parseConfig(configStr) {
+    if (!configStr) {
+        return {};
     }
     
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
+    try {
+        return JSON.parse(configStr);
+    } catch (e) {
+        console.warn(`Warning: Invalid JSON config: ${e.message}`);
+        return {};
     }
 }
 
-// Update 3
-module.exports = API;
-
-
-// API module for UmbrellaFramework
-
-class API {
-    constructor() {
-        this.routes = {};
-    }
-    
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
-    }
-}
-
-// Update 4
-module.exports = API;
-
-
-// API module for UmbrellaFramework
-
-class API {
-    constructor() {
-        this.routes = {};
-    }
-    
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
-    }
-}
-
-// Update 17
-module.exports = API;
-
-
-// API module for UmbrellaFramework
-
-class API {
-    constructor() {
-        this.routes = {};
-    }
-    
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
-    }
-}
-
-// Update 21
-module.exports = API;
-
-
-// API module for UmbrellaFramework
-
-class API {
-    constructor() {
-        this.routes = {};
-    }
-    
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
-    }
-}
-
-// Update 24
-module.exports = API;
-
-
-// API module for UmbrellaFramework
-
-class API {
-    constructor() {
-        this.routes = {};
-    }
-    
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
-    }
-}
-
-// Update 45
-module.exports = API;
-
-
-// API module for UmbrellaFramework
-
-class API {
-    constructor() {
-        this.routes = {};
-    }
-    
-    registerRoute(path, handler) {
-        this.routes[path] = handler;
-    }
-    
-    handleRequest(method, path, data = {}) {
-        if (this.routes[path]) {
-            return this.routes[path](data);
-        }
-        return { error: 'Not found' };
-    }
-    
-    getRoutes() {
-        return Object.keys(this.routes);
-    }
-}
-
-// Update 46
-module.exports = API;
+module.exports = { safeDivide, parseConfig };
